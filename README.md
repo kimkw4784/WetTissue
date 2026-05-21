@@ -14,8 +14,8 @@
 
 ## 배포 및 관련 링크
 
-- **Live Demo:** [배포된 웹사이트 링크 입력](https://...)
-- **GitHub Repository:** [깃허브 링크 입력](https://...)
+- **Live Demo:** [배포된 웹사이트 링크 입력](https://kimkw4784.github.io/WetTissue/)
+- **GitHub Repository:** [깃허브 링크 입력](https://github.com/kimkw4784/WetTissue)
 
 ---
 
