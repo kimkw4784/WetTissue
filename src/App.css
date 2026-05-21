@@ -1,0 +1,1730 @@
+/* src/App.css */
+
+/* GNB */
+.gnb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(244, 246, 245, 0.8);
+  border-bottom: 1px solid rgba(19, 59, 38, 0.05);
+  transition: background-color var(--duration-base) var(--ease-premium);
+}
+
+.gnb.scrolled {
+  background-color: rgba(244, 246, 245, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+.gnb-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gnb-logo span {
+  font-size: 0.8rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.gnb-menu {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.gnb-menu a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--duration-base) var(--ease-premium);
+  position: relative;
+}
+
+.gnb-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--duration-base) var(--ease-premium);
+}
+
+.gnb-menu a:hover {
+  color: var(--color-primary);
+}
+
+.gnb-menu a:hover::after {
+  width: 100%;
+}
+
+.gnb-cta {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--duration-base) var(--ease-premium);
+}
+
+.gnb-cta:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(145, 192, 36, 0.2);
+}
+
+/* Base Section Style */
+section {
+  position: relative;
+  padding: 10rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.section-tag {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.section-title {
+  font-size: 3.25rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  word-break: keep-all;
+  line-height: 1.25;
+}
+
+.section-desc {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  word-break: keep-all;
+}
+
+/* Section 1: Hero */
+.hero-section {
+  background-color: var(--color-bg);
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-text {
+  z-index: 10;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-white);
+  border: 1px solid rgba(19, 59, 38, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.hero-badge svg {
+  color: var(--color-accent);
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  word-break: keep-all;
+}
+
+.hero-desc {
+  font-size: 1.35rem;
+  color: var(--color-text-muted);
+  margin-bottom: 3.5rem;
+  word-break: keep-all;
+  line-height: 1.6;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  padding: 1.2rem 2.4rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(145, 192, 36, 0.15);
+  transition: all var(--duration-base) var(--ease-premium);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(19, 59, 38, 0.2);
+}
+
+.btn-secondary {
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 2px;
+  transition: color var(--duration-base) var(--ease-premium), border-color var(--duration-base) var(--ease-premium);
+}
+
+.btn-secondary:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Hero Graphic Container & Interaction */
+.hero-graphic-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-package-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(19, 59, 38, 0.08);
+  z-index: 2;
+}
+
+/* Floating Tissue Paper Overlay */
+.tissue-paper-overlay {
+  position: absolute;
+  top: 15%;
+  left: 42%;
+  width: 180px;
+  height: 180px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+.tissue-paper-overlay::before {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 1px dashed rgba(19, 59, 38, 0.2);
+  border-radius: inherit;
+}
+
+.tissue-label {
+  text-align: center;
+  font-style: italic;
+  font-family: var(--font-heading);
+}
+
+.hero-circle-deco {
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  border: 1px dashed rgba(19, 59, 38, 0.08);
+  border-radius: 50%;
+  z-index: 0;
+  animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Section 2: Problem */
+.problem-section {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.problem-section .section-title {
+  color: var(--color-white);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.85rem;
+}
+
+.problem-section .section-desc {
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.problem-card {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: left;
+  transition: all var(--duration-base) var(--ease-premium);
+}
+
+.problem-card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-8px);
+  border-color: rgba(145, 192, 36, 0.3);
+}
+
+.problem-card-num {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.problem-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  word-break: keep-all;
+}
+
+.problem-card-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* Section 3: Feature 1 - 성분 */
+.feature-composition {
+  background-color: var(--color-bg);
+}
+
+.composition-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.baby-img-wrapper {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(19, 59, 38, 0.08);
+}
+
+.baby-img-wrapper img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.composition-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background-color: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.composition-badge-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(145, 192, 36, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-accent);
+}
+
+.composition-badge-text h4 {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+}
+
+.composition-badge-text p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.spec-item {
+  display: flex;
+  gap: 1.5rem;
+  background-color: var(--color-white);
+  padding: 1.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(19, 59, 38, 0.03);
+  box-shadow: 0 4px 20px rgba(19, 59, 38, 0.01);
+  transition: transform var(--duration-base) var(--ease-premium);
+}
+
+.spec-item:hover {
+  transform: translateX(10px);
+}
+
+.spec-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background-color: #F4F6F5;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+.spec-content h3 {
+  font-size: 1.2rem;
+  font-family: var(--font-body);
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.spec-content p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* Section 4: Feature 2 - 친환경 */
+.feature-eco {
+  background-color: var(--color-white);
+}
+
+.eco-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eco-timeline-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 5rem;
+  position: relative;
+}
+
+.eco-timeline-track {
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background-color: #F4F6F5;
+  z-index: 1;
+}
+
+.eco-timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-accent);
+  transition: width 0.2s linear;
+}
+
+.eco-timeline-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.eco-step {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.3;
+  transform: translateY(20px);
+  transition: all 0.6s var(--ease-premium);
+}
+
+.eco-step.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eco-step-node {
+  width: 84px;
+  height: 84px;
+  background-color: var(--color-white);
+  border: 3px solid #F4F6F5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s var(--ease-premium);
+}
+
+.eco-step.active .eco-step-node {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: 0 10px 25px rgba(145, 192, 36, 0.2);
+}
+
+.eco-step h4 {
+  font-size: 1.15rem;
+  font-family: var(--font-body);
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.eco-step p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.eco-graphics-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 6rem;
+  text-align: left;
+}
+
+.eco-graphic-card {
+  background-color: #F4F6F5;
+  border-radius: 24px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.eco-image-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(19, 59, 38, 0.2);
+}
+
+.eco-image-wrapper img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Section 5: Feature 3 - 사용성 */
+.feature-usability {
+  background-color: var(--color-bg);
+}
+
+.usability-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  margin-top: 4rem;
+}
+
+.usability-card {
+  background-color: var(--color-white);
+  border-radius: 28px;
+  border: 1px solid rgba(19, 59, 38, 0.05);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(19, 59, 38, 0.2);
+  transition: all var(--duration-base) var(--ease-premium);
+}
+
+.usability-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(19, 59, 38, 0.08);
+}
+
+.usability-card.before-card:hover {
+  border-color: rgba(220, 53, 69, 0.4);
+}
+
+.usability-card.after-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 40px rgba(145, 192, 36, 0.12);
+}
+
+.usability-visual {
+  height: 320px;
+  background-color: #F4F6F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Usability Mock Animations */
+.bad-tissue-mock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bad-tissue-item {
+  width: 160px;
+  height: 80px;
+  background-color: rgba(19, 59, 38, 0.15);
+  border: 1px dashed var(--color-primary);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  animation: badTissuePull 3s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+@keyframes badTissuePull {
+
+  0%,
+  100% {
+    transform: translateY(120px) rotate(0deg);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateY(20px) rotate(-3deg);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translateY(10px) rotate(3deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  60% {
+    /* 뭉쳐서 줄줄이 나오는 연출 */
+    transform: translateY(-10px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+}
+
+.good-tissue-mock {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.good-package {
+  width: 180px;
+  height: 70px;
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.good-package-cap {
+  width: 80px;
+  height: 24px;
+  background-color: var(--color-accent);
+  border-radius: 8px 8px 0 0;
+  position: absolute;
+  top: -24px;
+}
+
+.good-tissue-sheet {
+  width: 120px;
+  height: 100px;
+  background-color: var(--color-white);
+  border: 1px solid rgba(19, 59, 38, 0.1);
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 -5px 8px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 80px;
+  z-index: 1;
+  animation: goodTissuePull 3s infinite var(--ease-premium);
+}
+
+@keyframes goodTissuePull {
+  0% {
+    transform: translateY(60px) scaleY(0.1);
+    opacity: 0;
+  }
+
+  15% {
+    transform: translateY(30px) scaleY(0.5);
+    opacity: 0.5;
+  }
+
+  40%,
+  70% {
+    /* 깔끔하게 하나만 딱 뽑히고 멈춰있는 모습 */
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+  }
+
+  85%,
+  100% {
+    transform: translateY(-80px) scaleY(0.8);
+    opacity: 0;
+  }
+}
+
+.usability-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.usability-badge.bad {
+  background-color: #FEE2E2;
+  color: #666666;
+}
+
+.usability-badge.good {
+  background-color: #ECFDF5;
+  color: var(--color-primary);
+  border: 1px solid rgba(145, 192, 36, 0.2);
+}
+
+.usability-content {
+  padding: 2.5rem;
+}
+
+.usability-content h3 {
+  font-size: 1.4rem;
+  font-family: var(--font-body);
+  margin-bottom: 0.75rem;
+}
+
+.usability-card.before-card h3 {
+  color: #666666;
+}
+
+.usability-card.after-card h3 {
+  color: var(--color-primary);
+}
+
+.usability-content p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* Section 6: Proof & Trust */
+.proof-section {
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.proof-section .section-title {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proof-section .section-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 4.5rem;
+}
+
+.proof-card {
+  background-color: #F4F6F5;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(19, 59, 38, 0.02);
+  transition: all var(--duration-base) var(--ease-premium);
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.proof-card:hover {
+  transform: translateY(-8px);
+  background-color: var(--color-white);
+  border-color: var(--color-accent);
+  box-shadow: 0 15px 35px rgba(19, 59, 38, 0.2);
+}
+
+.proof-badge-icon {
+  width: 72px;
+  height: 72px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 2rem;
+  color: var(--color-accent);
+  box-shadow: 0 8px 20px rgba(19, 59, 38, 0.03);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border: 1.5px solid rgba(19, 59, 38, 0.05);
+}
+
+.proof-card.premium-badge .proof-badge-icon {
+  border-color: var(--color-accent);
+  color: var(--color-primary);
+  background-color: rgba(145, 192, 36, 0.15);
+}
+
+.proof-card-title {
+  font-size: 1.25rem;
+  font-family: var(--font-body);
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.proof-card-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* Section 7: Closing & CTA */
+.closing-section {
+  background-color: var(--color-white);
+  /* GSAP으로 딥 그린으로 트랜지션 */
+  color: var(--color-primary);
+  text-align: center;
+  transition: background-color 0.8s var(--ease-premium);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.closing-section.bg-active {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+}
+
+.closing-content {
+  max-width: 850px;
+  margin: 0 auto;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 1s var(--ease-premium);
+}
+
+.closing-section.bg-active .closing-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.closing-title {
+  font-size: 3.5rem;
+  line-height: 1.3;
+  margin-bottom: 2.5rem;
+  word-break: keep-all;
+}
+
+.closing-desc {
+  font-size: 1.25rem;
+  margin-bottom: 4rem;
+  opacity: 0.8;
+  word-break: keep-all;
+}
+
+.closing-section.bg-active .btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  box-shadow: 0 10px 30px rgba(145, 192, 36, 0.3);
+}
+
+.closing-section.bg-active .btn-primary:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.closing-bg-decor {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(145, 192, 36, 0.08) 0%, rgba(19, 59, 38, 0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Footer */
+.footer {
+  background-color: #0c2518;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 5rem 0 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-info h3 {
+  color: var(--color-white);
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-info p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links h4 {
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-links a {
+  transition: color var(--duration-base) var(--ease-premium);
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  transition: all var(--duration-base) var(--ease-premium);
+}
+
+.footer-social-icon:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+/* Responsive CSS */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-title {
+    font-size: 3.25rem;
+  }
+
+  .problem-grid,
+  .proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 6rem 0;
+  }
+
+  .gnb {
+    padding: 0 1.5rem;
+    height: 70px;
+  }
+
+  .gnb-menu {
+    display: none;
+    /* 모바일 단순화 */
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .composition-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .baby-img-wrapper img {
+    height: 380px;
+  }
+
+  .eco-timeline-wrapper {
+    display: none;
+    /* 모바일 모션 최소화 지침 */
+  }
+
+  .eco-graphics-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .usability-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .closing-title {
+    font-size: 2.2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   Intro Sequence CSS (3D & Interactive Motions)
+   ========================================================================== */
+
+/* 인트로 컨테이너: 전체 화면 오버레이 */
+.intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #1b3d2b 0%, #0a1f14 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* 3D 씬 및 원근법 설정 */
+.intro-scene {
+  perspective: 900px;
+  perspective-origin: 50% 30%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 물티슈 패키지 본체 (탑뷰 시점 입체 표현) */
+.intro-package {
+  width: 410px;
+  height: 280px;
+  /* 참고 이미지의 연한 세이지 그린 파우치 컨셉로 표현 */
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.35) 0%, transparent 45%),
+    linear-gradient(115deg, transparent 25%, rgba(255, 255, 255, 0.25) 27%, transparent 30%),
+    linear-gradient(150deg, #c8d9b8 0%, #afc49e 40%, #99b389 100%);
+  border-radius: 24px;
+  /* 파우치 외곽 테두리 */
+  border: 3px solid rgba(80, 110, 70, 0.5);
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    inset 0 12px 20px rgba(255, 255, 255, 0.2),
+    inset 0 -15px 25px rgba(60, 90, 50, 0.2),
+    inset 28px 0 40px rgba(255, 255, 255, 0.08),
+    inset -28px 0 40px rgba(60, 90, 50, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  padding: 18px 40px;
+  /* 좌우 씨링 쿠션 위한 여백 */
+  box-sizing: border-box;
+}
+
+/* 좌우 파우치 씨링(열접착) 라인 */
+.intro-package::before,
+.intro-package::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  width: 18px;
+  background: linear-gradient(to right,
+      rgba(80, 100, 70, 0.35),
+      rgba(80, 100, 70, 0.2));
+  border-radius: 3px;
+}
+
+.intro-package::before {
+  left: 10px;
+  border-right: 1.5px solid rgba(60, 85, 55, 0.4);
+}
+
+.intro-package::after {
+  right: 10px;
+  border-left: 1.5px solid rgba(60, 85, 55, 0.4);
+}
+
+
+
+
+/* 패키지 본체 내 텍스트 및 데코 */
+.intro-package-body {
+  width: 100%;
+  height: 100%;
+  border: 1.5px dashed rgba(80, 110, 70, 0.2);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.intro-package-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* 패키지 평면에 납작하게 위치하여, 회전한 뚜껑이 위를 시에 3D공간에서 앞를 덮도록 translateZ(0) 유지 */
+  transform: translateZ(0);
+}
+
+.intro-package-logo {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: rgba(40, 70, 40, 0.9);
+  letter-spacing: -0.5px;
+  margin-top: 4px;
+}
+
+.intro-package-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-top: -6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.intro-package-info {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(50, 80, 50, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  transform: translateZ(0);
+}
+
+/* 플라스틱 캡 */
+.intro-cap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(1.5px);
+  width: 210px;
+  height: 130px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 2px solid rgba(19, 59, 38, 0.06);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.15),
+    inset 0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.intro-cap-base {
+  width: 190px;
+  height: 110px;
+  background-color: #f7f9f8;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+/* 물티슈 배출 구멍 */
+.intro-cap-hole {
+  width: 80px;
+  height: 46px;
+  background: radial-gradient(ellipse at center, #0f1c14 10%, #1e3627 100%);
+  border-radius: 50%;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(2px);
+}
+
+/* 3D 회전을 적용할 뚜껑 - intro-package-body의 직접 자식으로 배치하여 로고와 같은 3D 공간에서 덮을 수 있도록 함 */
+.intro-cap-lid {
+  position: absolute;
+  /* 캡 중앙에 정렬: 뚜껑 크기 160x98, 캡 중심은 패키지 중앙 */
+  top: calc(50% - 49px);
+  /* 세로 중심 - 뚜껑 높이의 절반 */
+  left: calc(50% - 80px);
+  /* 가로 중심 - 뚜껑 너비의 절반 */
+  width: 160px;
+  height: 98px;
+  /* transform-origin: center top → 뚜껑 상단 힌지 기준으로 뒤로 열림 */
+  /* 열렸을 때 뚜껑이 위쪽(로고 방향)으로 펼쳐지며 물리적으로 로고를 덮음 */
+  transform-origin: center top;
+  transform-style: preserve-3d;
+  /* GSAP이 rotateX와 z를 애니메이션으로 제어. 초기 translateZ(20px)는 로고보다 앞에 위치 */
+  transform: translateZ(20px);
+}
+
+/* 뚜껑 앞면 */
+.intro-cap-lid-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f5f4 100%);
+  border-radius: 50%;
+  border: 1px solid rgba(19, 59, 38, 0.08);
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.06),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9);
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* 뚜껑 뒷면 (열렸을 때 보여지는 안쪽) - 뚜렷한 명암 대비를 주어 열린 느낌 강조 */
+.intro-cap-lid-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #cfded6 0%, #a4b3aa 100%);
+  border-radius: 50%;
+  border: 1.5px solid rgba(19, 59, 38, 0.15);
+  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+  z-index: 1;
+}
+
+/* 뚜껑 탭(손잡이) */
+.intro-cap-lid-tab {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 12px;
+  background-color: #f3f5f4;
+  border: 1px solid rgba(19, 59, 38, 0.08);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.intro-cap-lid-brand {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  opacity: 0.25;
+  user-select: none;
+}
+
+/* 구멍 밖으로 나올 물티슈 원단 팁 */
+.intro-tissue-paper {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 56px;
+  background-color: rgba(255, 255, 255, 0.98);
+  border-radius: 40% 60% 40% 60% / 50% 50% 50% 50%;
+  box-shadow:
+    0 -5px 12px rgba(0, 0, 0, 0.15),
+    inset 0 2px 5px rgba(255, 255, 255, 0.8);
+  transform-origin: center bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(2px);
+}
+
+/* 물티슈 디테일 주름 선 */
+.intro-tissue-line {
+  width: 80%;
+  height: 80%;
+  border-left: 1px dashed rgba(19, 59, 38, 0.15);
+  border-right: 1px dashed rgba(19, 59, 38, 0.1);
+  border-radius: inherit;
+}
+
+/* 인트로 엠비언트 무드 라이트 효과 */
+.intro-ambient-light {
+  position: absolute;
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(circle, rgba(145, 192, 36, 0.14) 0%, rgba(19, 59, 38, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: screen;
+  animation: pulseLight 7s ease-in-out infinite alternate;
+}
+
+@keyframes pulseLight {
+  0% {
+    transform: scale(0.92) translate(-2%, -2%);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.08) translate(2%, 2%);
+    opacity: 1;
+  }
+}
+
+/* 메인 컨테이너 인트로 진행 중 블러 처리 및 로드 완료 시 페이드인 */
+.intro-blur {
+  filter: blur(20px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-fade-in {
+  filter: blur(0px);
+  opacity: 1;
+  transition: filter 1.4s var(--ease-premium), opacity 1.4s var(--ease-premium);
+}
+
+/* 반응형 모바일 대응 */
+@media (max-width: 480px) {
+  .intro-package {
+    width: 320px;
+    height: 215px;
+    border-radius: 30px;
+    padding: 12px;
+  }
+
+  .intro-package-body {
+    padding: 10px 14px;
+    border-radius: 22px;
+  }
+
+  .intro-package-logo {
+    font-size: 1.35rem;
+    margin-top: 2px;
+  }
+
+  .intro-cap {
+    width: 156px;
+    height: 96px;
+    transform: translate(-50%, -50%) translateZ(1px);
+  }
+
+  .intro-cap-base {
+    width: 140px;
+    height: 80px;
+  }
+
+  .intro-cap-lid {
+    width: 118px;
+    height: 72px;
+    top: 4px;
+    left: 11px;
+    transform: translateZ(4px);
+  }
+
+  .intro-cap-hole {
+    width: 58px;
+    height: 32px;
+    transform: translateZ(1px);
+  }
+
+  .intro-tissue-paper {
+    width: 36px;
+    height: 40px;
+    top: -11px;
+    transform: translateZ(2px);
+  }
+
+  .intro-package-info {
+    font-size: 0.6rem;
+    gap: 0.8rem;
+    margin-bottom: 2px;
+  }
+}
+
+/* ==========================================================================
+   우측 하단 플로팅 TOP 버튼 (Forest Green 톤앤매너)
+   ========================================================================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-primary, #133a23);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #1a4a2f;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* 초록색 배경(어두운 섹션) 위에서의 스타일 (시인성 극대화) */
+.scroll-to-top.on-green {
+  background-color: var(--color-accent, #91c024);
+  color: var(--color-primary, #133b26);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(145, 192, 36, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.scroll-to-top.on-green:hover {
+  background-color: var(--color-white, #ffffff);
+  color: var(--color-primary, #133b26);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================================================
+   바람에 휘날리는 커스텀 물티슈 마우스 커서
+   ========================================================================== */
+.custom-tissue-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  display: none; /* 모바일이나 JS 로드 전에는 숨김 */
+}
+
+/* 물티슈의 자연스럽고 가벼운 펄럭임 효과 */
+.custom-tissue-cursor svg {
+  animation: tissueFlutter 3.2s ease-in-out infinite alternate;
+  transform-origin: 30% 50%;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes tissueFlutter {
+  0% {
+    transform: rotate(-4deg) skewX(-2deg) scale(1) translateY(0);
+  }
+  35% {
+    transform: rotate(6deg) skewX(4deg) scale(1.05) translateY(-3px) skewY(1deg);
+  }
+  70% {
+    transform: rotate(-2deg) skewX(-3deg) scale(0.97) translateY(2px) skewY(-1deg);
+  }
+  100% {
+    transform: rotate(3deg) skewX(2deg) scale(1.02) translateY(-1px);
+  }
+}
+
+/* 링크 및 버튼 등 상호작용 요소 위에 올라갈 때의 커서 피드백 */
+.custom-tissue-cursor.hovering svg {
+  transform: scale(1.35) rotate(18deg);
+  filter: drop-shadow(0 8px 16px rgba(19, 59, 38, 0.22));
+}
+
+.custom-tissue-cursor.hovering path:first-child {
+  fill: #ffffff;
+  stroke: rgba(145, 192, 36, 0.6); /* 포레스트퓨 특유의 올리브/라임 컬러로 빛남 */
+  stroke-width: 2px;
+}
+
+/* 데스크탑 환경 등 마우스 포인터가 제공될 때만 커스텀 커서 적용 */
+@media (pointer: fine) {
+  .custom-tissue-cursor {
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   구매 감사 모달 팝업 스타일 (Forest Green 톤앤매너)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(19, 59, 38, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20000;
+  animation: modalFadeIn 0.35s var(--ease-premium);
+}
+
+.modal-card {
+  background-color: var(--color-white, #ffffff);
+  border-radius: 28px;
+  padding: 3.5rem 2.5rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(19, 59, 38, 0.16);
+  border: 1px solid rgba(19, 59, 38, 0.05);
+  transform: scale(0.92);
+  animation: modalScaleUp 0.35s var(--ease-premium) forwards;
+}
+
+.modal-icon {
+  width: 68px;
+  height: 68px;
+  background-color: rgba(145, 192, 36, 0.12);
+  border-radius: 50%;
+  color: var(--color-accent, #91c024);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.65rem;
+  color: var(--color-primary, #133b26);
+  margin-bottom: 1rem;
+  word-break: keep-all;
+  line-height: 1.35;
+}
+
+.modal-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted, #62756a);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  word-break: keep-all;
+}
+
+.btn-modal-close {
+  background-color: var(--color-primary, #133b26);
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 3rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(19, 59, 38, 0.15);
+  transition: all var(--duration-base) var(--ease-premium);
+}
+
+.btn-modal-close:hover {
+  background-color: var(--color-accent, #91c024);
+  color: var(--color-primary, #133b26);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(145, 192, 36, 0.25);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleUp {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
