@@ -447,11 +447,11 @@ function App() {
             <div className="hero-graphic-container">
               <div className="hero-circle-deco"></div>
               {/* 쏙 올라오는 물티슈 오브젝트 */}
-              <div ref={heroTissueRef} className="tissue-paper-overlay">
+              {/* <div ref={heroTissueRef} className="tissue-paper-overlay">
                 <div className="tissue-label">
                   Pure Rayon 100%
                 </div>
-              </div>
+              </div> */}
               <img
                 src={hero_package}
                 alt="ForestPure Premium Wet Wipes Package"
