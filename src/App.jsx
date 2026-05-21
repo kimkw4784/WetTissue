@@ -19,9 +19,9 @@ import {
   FileText,
   ArrowUp
 } from 'lucide-react';
-import package from './assets/images/hero_package.png';
-import babyImg from './assets/images/baby_safety.png';
-import fabric from './assets/images/biodegradable_fabric.png';
+import hero_package from './assets/images/hero_package.png';
+import baby_safety from './assets/images/baby_safety.png';
+import biodegradable_fabric from './assets/images/biodegradable_fabric.png';
 import './App.css';
 
 // GSAP 플러그인 등록
@@ -453,7 +453,7 @@ function App() {
                 </div>
               </div>
               <img
-                src={package}
+                src={hero_package}
                 alt="ForestPure Premium Wet Wipes Package"
               />
             </div>
@@ -503,7 +503,7 @@ function App() {
           <div className="container composition-grid">
             <div className="baby-img-wrapper">
               <img
-                src={babyImg}
+                src={baby_safety}
                 alt="안심하는 아기의 행복한 얼굴"
               />
               <div className="composition-badge">
@@ -611,7 +611,7 @@ function App() {
               <div className="eco-graphic-card">
                 <div className="eco-image-wrapper">
                   <img
-                    src={fabric}
+                    src={biodegradable_fabric}
                     alt="흙 속에서 분해되는 친환경 물티슈 원사"
                   />
                 </div>
