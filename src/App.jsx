@@ -19,10 +19,10 @@ import {
   FileText,
   ArrowUp
 } from 'lucide-react';
-import './App.css';
 import package from './assets/images/hero_package.png';
 import babyImg from './assets/images/baby_safety.png';
 import fabric from './assets/images/biodegradable_fabric.png';
+import './App.css';
 
 // GSAP 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);
