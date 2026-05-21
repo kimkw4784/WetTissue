@@ -20,9 +20,9 @@ import {
   ArrowUp
 } from 'lucide-react';
 import './App.css';
-import package from '/images/hero_package.png';
-import babyImgRef from '/images/baby_safety.png';
-import fabric from '/images/biodegradable_fabric.png';
+import package from '../images/hero_package.png';
+import babyImg from '../images/baby_safety.png';
+import fabric from '../images/biodegradable_fabric.png';
 
 // GSAP 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);
@@ -503,7 +503,7 @@ function App() {
           <div className="container composition-grid">
             <div className="baby-img-wrapper">
               <img
-                src={babyImgRef}
+                src={babyImg}
                 alt="안심하는 아기의 행복한 얼굴"
               />
               <div className="composition-badge">
